@@ -1,0 +1,40 @@
+{% extends 'flowers/base.html'%}
+{% block title %} signup {% endblock title %}
+
+{% block content%}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6" style="margin: 20px auto 0 auto;">
+                <div class="row text-center m-3">
+                    <h2>Register</h2>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <form action="{% url 'signup' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group" style="margin: 20px auto;">
+                                <input type="text" class="form-control" name="username" placeholder="Enter Username"><br>
+                                <input type="text" class="form-control" name="firstname" placeholder="Enter Firstname"><br>
+                                <input type="text" class="form-control" name="lastname" placeholder="Enter Lastname"><br>
+                                <input type="email" class="form-control" name="email" placeholder="Enter Email Address"><br>
+                                <input type="password" class="form-control" name="pass1" placeholder="create password"><br>
+                                <input type="password" class="form-control" name="pass2" placeholder="Confirm password"><br>
+                            </div>
+                            <div class="row" style="margin: 20px auto;">
+                                <div class="col-6">
+                                    <button type="submit" class="btn btn-success" style="display: block; margin:0 auto;">Signup</button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="reset" class="btn btn-danger" style= "display: block;margin:0 auto;">Reset</button>
+                                </div>
+                            </div>
+
+                        </form>                     
+                        
+                    </div>
+                </div> 
+            </div> 
+        </div>
+    </div>
+
+{% endblock %}

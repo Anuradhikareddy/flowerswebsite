@@ -1,0 +1,31 @@
+{% extends 'flowers/base.html'%}
+{% block title %} flowersnfruits {% endblock title %}
+
+{% block content%}
+<div class="con-3">
+    <div class="product_sidebar">
+        <ul>
+            <li><a href=""> Flowers </a></li>
+            <li><a href=""> cakes </a></li>
+            <li><a href=""> chacolates </a></li>
+        </ul>
+        <ul>
+            <li><a href=""> Flowers </a></li>
+            <li><a href=""> cakes </a></li>
+            <li><a href=""> chacolates </a></li>
+        </ul>
+    </div>
+    {% block products%}
+        <div class="products-gallary">
+            {% for product in products %}
+            <div class="product">
+                <a><img src="{{product.image.url}}" alt="{{product.name}}" /></a><br>
+                <button>Buy Now</button>
+                <h3>{{product.name}}</h3>
+                <p>INR {{product.price}}<br></p>
+            </div>
+            {% endfor %}
+        </div>
+    {% endblock products %}                   
+</div>
+{% endblock %}
